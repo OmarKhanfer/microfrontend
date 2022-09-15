@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'shared-header',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SharedHeaderComponent implements OnInit {
   showMenu = false;
-  constructor() { }
+  onClose: BehaviorSubject<any>;
+  refId:any;
+  constructor() { 
+    this.onClose = new BehaviorSubject<any>(null);
+  }
   
   showComponents() {
     this.showMenu = !this.showMenu;
@@ -16,4 +21,8 @@ export class SharedHeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  closeHandler(event:any) {
+    debugger;
+    this.onClose.next(event);
+  }
 }

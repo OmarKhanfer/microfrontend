@@ -5,12 +5,12 @@ module.exports = withModuleFederationPlugin({
   name: 'MainControlls',
 
   exposes: {
-    './Footer': './projects/main-controlls/src/app/components/shared-footer/shared-footer.component.ts',
+    './Footer':  './projects/main-controlls/src/app/components/shared-footer/shared-footer.component.ts',
     './Header': './projects/main-controlls/src/app/components/shared-header/shared-header.component.ts'
   },
 
   shared: {
-    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto', }),
   },
 
 });

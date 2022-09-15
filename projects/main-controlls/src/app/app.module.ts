@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClient, HttpClientModule, HttpHandler } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SharedHeaderComponent } from './components/shared-header/shared-header.component';
 import { SharedFooterComponent } from './components/shared-footer/shared-footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,13 +13,14 @@ import { MenuComponent } from './components/menu/menu.component';
     MenuComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   exports: [
     SharedHeaderComponent,
     SharedFooterComponent
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
